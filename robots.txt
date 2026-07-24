@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://yanshu-legend.github.io/legendcapital-geo/sitemap.xml
