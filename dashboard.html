@@ -24,7 +24,7 @@ h2::after{content:'';flex:1;height:1px;background:var(--border)}
 .metric-sub{font-size:12px;color:var(--muted);margin-top:6px}
 .metric-trend{font-size:12px;margin-top:4px;display:flex;align-items:center;gap:4px}
 .trend-up{color:var(--green)}.trend-down{color:var(--red)}.trend-flat{color:var(--yellow)}
-.color-green{color:var(--green)}.color-yellow{color:var(--yellow)}.color-red{color:var(--red)}.color-blue{color:var(--blue)}.color-orange{color:var(--orange)}
+.color-green{color:var(--green)}.color-yellow{color:var(--yellow)}.color-red{color:var(--red)}.color-blue{color:var(--blue)}.color-orange{color:var(--orange)}.color-purple{color:var(--purple)}
 .panels{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px}
 @media(max-width:768px){.panels{grid-template-columns:1fr}}
 .panel{background:var(--card);border-radius:var(--radius);border:1px solid var(--border);padding:20px}
@@ -34,10 +34,10 @@ th{text-align:left;padding:8px 12px;color:var(--muted);font-weight:500;font-size
 td{padding:10px 12px;border-bottom:1px solid var(--border)}
 tr:last-child td{border-bottom:none}
 .badge{display:inline-block;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:600}
-.bg-green{background:rgba(34,197,94,.15);color:var(--green)}.bg-yellow{background:rgba(234,179,8,.15);color:var(--yellow)}.bg-red{background:rgba(239,68,68,.15);color:var(--red)}.bg-blue{background:rgba(59,130,246,.15);color:var(--blue)}.bg-orange{background:rgba(249,115,22,.15);color:var(--orange)}
+.bg-green{background:rgba(34,197,94,.15);color:var(--green)}.bg-yellow{background:rgba(234,179,8,.15);color:var(--yellow)}.bg-red{background:rgba(239,68,68,.15);color:var(--red)}.bg-blue{background:rgba(59,130,246,.15);color:var(--blue)}.bg-orange{background:rgba(249,115,22,.15);color:var(--orange)}.bg-purple{background:rgba(168,85,247,.15);color:var(--purple)}
 .bar-wrap{height:8px;border-radius:4px;background:var(--border);overflow:hidden;margin-top:6px}
 .bar-fill{height:100%;border-radius:4px;transition:width .6s ease}
-.bar-green{background:linear-gradient(90deg,var(--green),#16a34a)}.bar-yellow{background:linear-gradient(90deg,var(--yellow),#ca8a04)}.bar-red{background:linear-gradient(90deg,var(--red),#b91c1c)}.bar-blue{background:linear-gradient(90deg,var(--blue),#2563eb)}.bar-orange{background:linear-gradient(90deg,var(--orange),#ea580c)}
+.bar-green{background:linear-gradient(90deg,var(--green),#16a34a)}.bar-yellow{background:linear-gradient(90deg,var(--yellow),#ca8a04)}.bar-red{background:linear-gradient(90deg,var(--red),#b91c1c)}.bar-blue{background:linear-gradient(90deg,var(--blue),#2563eb)}.bar-orange{background:linear-gradient(90deg,var(--orange),#ea580c)}.bar-purple{background:linear-gradient(90deg,var(--purple),#7c3aed)}
 .timeline{position:relative;padding-left:24px}
 .timeline::before{content:'';position:absolute;left:8px;top:4px;bottom:4px;width:2px;background:var(--border)}
 .tl-item{position:relative;margin-bottom:16px;font-size:13px}
@@ -45,11 +45,16 @@ tr:last-child td{border-bottom:none}
 .tl-item:last-child .tl-dot,.tl-item.highlight .tl-dot{background:var(--green)}
 .tl-date{font-size:11px;color:var(--muted)}
 .tl-text{color:var(--text)}
-.alert-box{background:rgba(249,115,22,.08);border:1px solid rgba(249,115,22,.2);border-radius:8px;padding:14px 16px;margin-bottom:16px;font-size:13px;display:flex;align-items:flex-start;gap:10px}
-.alert-box strong{color:var(--orange)}
+.alert-box{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);border-radius:8px;padding:14px 16px;margin-bottom:16px;font-size:13px;display:flex;align-items:flex-start;gap:10px}
+.alert-box strong{color:var(--green)}
 .footer{margin-top:40px;padding-top:20px;border-top:1px solid var(--border);font-size:12px;color:var(--muted);text-align:center}
 .tag{display:inline-block;padding:1px 6px;border-radius:4px;font-size:10px;font-weight:600;margin-left:6px;vertical-align:middle}
-.tag-new{background:var(--green);color:#000}.tag-hot{background:var(--orange);color:#000}.tag-warn{background:var(--yellow);color:#000}
+.tag-new{background:var(--green);color:#000}.tag-hot{background:var(--orange);color:#000}.tag-warn{background:var(--yellow);color:#000}.tag-done{background:var(--blue);color:#fff}
+.link-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:10px;margin:12px 0}
+.link-card{background:rgba(59,130,246,.06);border:1px solid var(--border);border-radius:8px;padding:12px 16px;font-size:12px}
+.link-card a{color:var(--blue);text-decoration:none;font-weight:600}
+.link-card a:hover{text-decoration:underline}
+.link-card .desc{color:var(--muted);font-size:11px;margin-top:4px}
 </style>
 </head>
 <body>
@@ -57,108 +62,155 @@ tr:last-child td{border-bottom:none}
 
 <h1>🧭 君联资本 <span>GEO</span> 品牌可见性看板</h1>
 <div class="sub">
-  <span>最后更新：2026-07-27 10:30 GMT+8</span>
+  <span>最后更新：2026-07-29 12:30 GMT+8</span>
   <span class="live">监测运行中</span>
-  <span>周度报告 #1</span>
+  <span>GEO 推广基础设施升级完成</span>
 </div>
 
 <div class="metrics">
   <div class="metric">
-    <div class="metric-label">总体 AI 引用率</div>
-    <div class="metric-value">25<small style="font-size:16px">%</small></div>
-    <div class="metric-sub">基于 5 个基线问题域</div>
-    <div class="bar-wrap"><div class="bar-fill" style="width:25%;background:linear-gradient(90deg,#eab308,#f97316)"></div></div>
-    <div class="metric-trend trend-up">↑ +5pp vs 基线（量子计算驱动）</div>
+    <div class="metric-label">GitHub Pages GEO 页面</div>
+    <div class="metric-value color-green">14</div>
+    <div class="metric-sub">全部收录 sitemap.xml<span class="tag tag-new">+250%</span></div>
+    <div class="bar-wrap"><div class="bar-fill bar-green" style="width:100%"></div></div>
+    <div class="metric-trend trend-up">↑ 6→14 URL（幽灵页面全部激活）</div>
   </div>
   <div class="metric">
-    <div class="metric-label">GEO 内容页</div>
-    <div class="metric-value">4</div>
-    <div class="metric-sub">GitHub Pages 公网运营中</div>
-    <div class="metric-trend trend-flat">→ 上线3天，等待搜索引擎索引</div>
+    <div class="metric-label">IndexNow 通知状态</div>
+    <div class="metric-value color-blue">✅</div>
+    <div class="metric-sub">14 URL 全部提交 Bing</div>
+    <div class="bar-wrap"><div class="bar-fill bar-blue" style="width:100%"></div></div>
+    <div class="metric-trend trend-up">↑ 两轮推送完成（200/202）</div>
   </div>
   <div class="metric">
-    <div class="metric-label">竞品话语权差距</div>
-    <div class="metric-value color-red">-80<small style="font-size:16px">%</small></div>
-    <div class="metric-sub">vs 启明创投 AI 赛道（WAIC 十大展望）</div>
-    <div class="metric-trend trend-down">↓ 差距扩大（启明WAIC系统性输出）</div>
+    <div class="metric-label">Bing Webmaster Tools</div>
+    <div class="metric-value color-green">✅</div>
+    <div class="metric-sub">验证 + Sitemap 提交完成</div>
+    <div class="bar-wrap"><div class="bar-fill bar-green" style="width:100%"></div></div>
+    <div class="metric-trend trend-up">↑ ChatGPT/Copilot 索引入口已开启</div>
   </div>
   <div class="metric">
-    <div class="metric-label">量子计算信号</div>
-    <div class="metric-value color-green">🔥 3线</div>
-    <div class="metric-sub">华翊A+轮 + 两仪万象 + 新领投</div>
-    <div class="metric-trend trend-up">↑↑ 信号密度翻倍</div>
+    <div class="metric-label">内容分发</div>
+    <div class="metric-value color-purple">5</div>
+    <div class="metric-sub">LinkedIn 英文帖子已备稿</div>
+    <div class="bar-wrap"><div class="bar-fill bar-purple" style="width:70%"></div></div>
+    <div class="metric-trend trend-flat">⏳ 待发布 · Sona 数据卡片图待生成</div>
   </div>
 </div>
 
 <div class="alert-box">
-  <strong>⚠️ 本周关注</strong>
-  <span>启明创投在 WAIC 2026 发布"AI十大展望"，累计100+项目/120亿/5个AI IPO，AI领域话语权差距从 -75% 扩大至 -80%。君联量子计算信号极强（三线并进），建议本周生成量子计算专题 GEO 页面抢占垂直引用。</span>
+  <strong>✅ 本轮完成（2026-07-29）</strong>
+  <span>llms.txt 上线 · IndexNow 主动推送 14 URL · Bing Webmaster Tools 注册验证 · sitemap 6→14 URL 收录 · 首页 12 页完整导航 · 新兴产业与未来产业全景 GEO 页上线 · LinkedIn 5 篇英文分发包已制作</span>
 </div>
 
 <div class="panels">
   <div class="panel">
-    <div class="panel-title">📊 分维度 AI 引用率（周度变化）</div>
+    <div class="panel-title">📊 GEO 技术基建状态</div>
     <table>
-      <tr><th>维度</th><th>引用率</th><th>周变化</th><th>关键信号</th></tr>
-      <tr><td>品牌搜索</td><td><span class="badge bg-green">95%</span></td><td>→</td><td>百科+官网+"一天两IPO"记忆点稳定</td></tr>
-      <tr style="background:rgba(249,115,22,.05)"><td>量子计算</td><td><span class="badge bg-orange">极强</span><span class="tag tag-hot">↑↑</span></td><td>↑↑</td><td>华翊A+轮追加 + 两仪万象参投 + 新领投</td></tr>
-      <tr><td>硬科技VC</td><td><span class="badge bg-yellow">60%</span></td><td>→</td><td>榜单第7-8名稳定，非前5联想</td></tr>
-      <tr><td>出海服务</td><td><span class="badge bg-red">5%</span></td><td>→</td><td>EqualOcean TOP20 未关联君联</td></tr>
-      <tr><td>AI投资领域</td><td><span class="badge bg-red">5%</span></td><td>→</td><td>智谱IPO余热，启明WAIC压倒性领先</td></tr>
-      <tr style="background:rgba(59,130,246,.05)"><td><strong>内容可发现性</strong></td><td><span class="badge bg-blue">改善中</span><span class="tag tag-new">新</span></td><td>↑</td><td>4页GEO上线，等待Google/Bing索引（1-2周）</td></tr>
+      <tr><th>项目</th><th>状态</th><th>说明</th></tr>
+      <tr><td>llms.txt</td><td><span class="badge bg-green">✅ 已上线</span></td><td>AI Agent 标准发现接口，13 个内容节点</td></tr>
+      <tr><td>IndexNow</td><td><span class="badge bg-green">✅ 运行中</span></td><td>主动通知 Bing，14 URL 全部 200</td></tr>
+      <tr><td>Bing Webmaster Tools</td><td><span class="badge bg-green">✅ 已验证</span></td><td>Sitemap 已提交，URL 检查器已触发</td></tr>
+      <tr><td>robots.txt</td><td><span class="badge bg-green">✅ 已更新</span></td><td>新增 llms.txt 发现提示</td></tr>
+      <tr><td>Google Search Console</td><td><span class="badge bg-yellow">⏳ 待注册</span></td><td>验证文件 googled2c0dbf944db0b23.html 已部署</td></tr>
+      <tr><td>IndexNow GitHub Action</td><td><span class="badge bg-yellow">⏳ Token</span></td><td>workflow 权限缺失，手动推送可用</td></tr>
+      <tr><td>自定义域名</td><td><span class="badge bg-red">未配置</span></td><td>建议绑定 geo.legendcapital.com.cn</td></tr>
     </table>
   </div>
   <div class="panel">
-    <div class="panel-title">🏢 竞品 AI 搜索可见度对标（07-27更新）</div>
+    <div class="panel-title">🏢 竞品 AI 搜索可见度对标</div>
     <table>
-      <tr><th>机构</th><th>AI投资可见度</th><th>最新动态</th><th>对标差距</th></tr>
-      <tr style="background:rgba(239,68,68,.06)"><td>启明创投</td><td><span class="badge bg-green">★★★★★</span></td><td>WAIC 2026 AI十大展望 · 120亿100+项目 · 7月5AI IPO</td><td><span class="badge bg-red">-80%</span></td></tr>
-      <tr><td>红杉中国</td><td><span class="badge bg-green">★★★★★</span></td><td>斯坦福AI报告 · 杨云霞医疗AI · 2025投资图谱</td><td><span class="badge bg-red">-75%</span></td></tr>
-      <tr><td>高瓴资本</td><td><span class="badge bg-yellow">★★★★</span></td><td>具身智能13次出手 · 张磊哲学体系</td><td><span class="badge bg-yellow">-50%</span></td></tr>
+      <tr><th>机构</th><th>AI 投资可见度</th><th>最新动态</th><th>对标差距</th></tr>
+      <tr style="background:rgba(239,68,68,.06)"><td>启明创投</td><td><span class="badge bg-green">★★★★★</span></td><td>WAIC 2026 AI十大展望 · 120亿100+项目</td><td><span class="badge bg-red">-80%</span></td></tr>
+      <tr><td>红杉中国</td><td><span class="badge bg-green">★★★★★</span></td><td>斯坦福AI报告 · 投资图谱体系化</td><td><span class="badge bg-red">-75%</span></td></tr>
+      <tr><td>高瓴资本</td><td><span class="badge bg-yellow">★★★★</span></td><td>具身智能密集出手 · 张磊哲学体系</td><td><span class="badge bg-yellow">-50%</span></td></tr>
       <tr><td>深创投</td><td><span class="badge bg-red">★★</span></td><td>界面排名第3 · AI话语权弱</td><td><span class="badge bg-green">平</span></td></tr>
-      <tr style="background:rgba(168,85,247,.08)"><td><strong>君联资本</strong></td><td><span class="badge bg-yellow">★☆</span><span class="tag tag-new">↑</span></td><td>量子计算三线引爆 · GEO上线 · Schema全行业领先</td><td><span class="badge bg-blue">基线</span></td></tr>
+      <tr style="background:rgba(168,85,247,.08)"><td><strong>君联资本</strong></td><td><span class="badge bg-yellow">★★</span><span class="tag tag-new">↑↑</span></td><td>14页GEO上线 · Bing索引已通 · LinkedIn分发启动</td><td><span class="badge bg-blue">基线</span></td></tr>
     </table>
   </div>
 </div>
 
-<h2>📦 GEO 内容管道</h2>
-<div class="metrics" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
-  <div class="metric">
-    <div class="metric-label">已上线 GEO 页</div>
-    <div class="metric-value" style="font-size:20px">5<small style="font-size:13px"> 页</small></div>
-    <div class="bar-wrap"><div class="bar-fill bar-blue" style="width:50%"></div></div>
-    <div class="metric-sub">🆕 量子计算版图 · 一页纸 · 耐心资本 · 出海 · AI投资</div>
-    <div class="metric-trend trend-up">↑ 量子计算页更新至v2（4路线全布局，16:50）</div>
+<div class="panels">
+  <div class="panel">
+    <div class="panel-title">📡 AI 引用率分维度</div>
+    <table>
+      <tr><th>维度</th><th>引用率</th><th>变化</th><th>关键信号</th></tr>
+      <tr><td>品牌搜索</td><td><span class="badge bg-green">95%</span></td><td>→</td><td>百科+官网+"一天两IPO"记忆点稳定</td></tr>
+      <tr style="background:rgba(249,115,22,.05)"><td>量子计算</td><td><span class="badge bg-orange">极强</span><span class="tag tag-hot">🔥</span></td><td>↑↑</td><td>4路线全布局GEO页 + 国盾/图灵/华翊/两仪万象</td></tr>
+      <tr><td>硬科技VC</td><td><span class="badge bg-yellow">60%</span></td><td>→</td><td>榜单第7-8名，非前5联想</td></tr>
+      <tr><td>AI投资领域</td><td><span class="badge bg-red">5%</span></td><td>→</td><td>智谱IPO余热，启明WAIC系统输出领先</td></tr>
+      <tr style="background:rgba(34,197,94,.05)"><td>内容可发现性</td><td><span class="badge bg-green">大幅改善</span><span class="tag tag-done">↑↑</span></td><td>↑↑</td><td>14页GEO + Schema + llms.txt + Bing索引</td></tr>
+      <tr><td>出海服务</td><td><span class="badge bg-red">5%</span></td><td>→</td><td>内容存在但引用弱，待LinkedIn分发提权</td></tr>
+    </table>
   </div>
-  <div class="metric">
-    <div class="metric-label">最新更新</div>
-    <div class="metric-value color-green" style="font-size:20px">v2 四路线</div>
-    <div class="bar-wrap"><div class="bar-fill bar-green" style="width:100%"></div></div>
-    <div class="metric-sub">国盾+图灵+华翊+两仪万象 · 超导/光量子/离子阱/中性原子</div>
-    <div class="metric-trend trend-up">↑ 16:50 更新至全路线·全周期·全梯度版本</div>
-  </div>
-  <div class="metric">
-    <div class="metric-label">内容新鲜度</div>
-    <div class="metric-value" style="font-size:20px">< 1h</div>
-    <div class="bar-wrap"><div class="bar-fill bar-green" style="width:95%"></div></div>
-    <div class="metric-sub">量子计算页 10:45 上线 · 7/24 4页基础内容 · 累计5页</div>
+  <div class="panel">
+    <div class="panel-title">⏳ 待办事项</div>
+    <table>
+      <tr><th>优先级</th><th>事项</th><th>状态</th></tr>
+      <tr><td><span class="badge bg-orange">P1</span></td><td>Google Search Console 注册</td><td><span class="badge bg-yellow">待执行</span></td></tr>
+      <tr><td><span class="badge bg-orange">P1</span></td><td>LinkedIn 帖子实际发布</td><td><span class="badge bg-yellow">稿已备齐</span></td></tr>
+      <tr><td><span class="badge bg-orange">P1</span></td><td>Sona 工作台生成数据卡片图</td><td><span class="badge bg-yellow">待协调</span></td></tr>
+      <tr><td><span class="badge bg-yellow">P2</span></td><td>修复 GitHub Action IndexNow</td><td><span class="badge bg-yellow">Token workflow scope</span></td></tr>
+      <tr><td><span class="badge bg-yellow">P2</span></td><td>绑定自定义域名</td><td><span class="badge bg-red">未开始</span></td></tr>
+      <tr><td><span class="badge bg-yellow">P2</span></td><td>知乎专栏同步分发</td><td><span class="badge bg-red">未开始</span></td></tr>
+      <tr><td><span class="badge bg-blue">复查</span></td><td>耐心资本实验效果复查</td><td><span class="badge bg-blue">2026-08-20</span></td></tr>
+    </table>
   </div>
 </div>
 
-<h2>📅 关键事件与复查节点</h2>
+<h2>📦 GEO 内容管道（GitHub Pages）</h2>
+<div class="panels" style="grid-template-columns:1fr">
+  <div class="panel">
+    <div class="panel-title">全部 14 个页面 · sitemap.xml 收录 · Schema 标记</div>
+    <div style="font-size:13px;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:8px">
+      <div style="font-weight:600;color:var(--purple);grid-column:1/-1;margin-top:8px">⭐ 旗舰内容（4 页）</div>
+      <div class="link-card">
+        <a href="https://yanshu-legend.github.io/legendcapital-geo/geo/emerging-industries-2026/">新兴产业与未来产业投资全景</a><span class="tag tag-new">🆕</span>
+        <div class="desc">900亿+ · 700+投资 · 127 IPO · 6 道 FAQ · Article Schema</div>
+      </div>
+      <div class="link-card">
+        <a href="https://yanshu-legend.github.io/legendcapital-geo/geo/quantum-computing/">量子计算投资版图</a><span class="tag tag-hot">🔥</span>
+        <div class="desc">4路线全布局 · 国盾+图灵+华翊+两仪万象 · 6 道 FAQ</div>
+      </div>
+      <div class="link-card">
+        <a href="https://yanshu-legend.github.io/legendcapital-geo/geo/">耐心资本北京模式</a>
+        <div class="desc">社保50亿 · 16项目 · 240亿撬动 · 4 道 FAQ</div>
+      </div>
+      <div class="link-card">
+        <a href="https://yanshu-legend.github.io/legendcapital-geo/geo/ai-investment/">AI 投资全景</a>
+        <div class="desc">智谱9轮投资 · AI全栈 · FAQ/Schema</div>
+      </div>
+      <div style="font-weight:600;color:var(--blue);grid-column:1/-1;margin-top:8px">🏆 被投企业动态（3 页）</div>
+      <div class="link-card"><a href="https://yanshu-legend.github.io/legendcapital-geo/geo/gei-unicorn-2026/">GEI 独角兽榜单 2026</a><span class="tag tag-new">🔄</span><div class="desc">24家上榜 · 横跨AI/医疗/航天</div></div>
+      <div class="link-card"><a href="https://yanshu-legend.github.io/legendcapital-geo/geo/haizhi-tech-ipo/">海致科技 IPO</a><span class="tag tag-new">🔄</span><div class="desc">产业级AI智能体 · 02706.HK</div></div>
+      <div class="link-card"><a href="https://yanshu-legend.github.io/legendcapital-geo/geo/zhijian-dongli-2026/">至简动力·具身智能</a><span class="tag tag-new">🔄</span><div class="desc">数十亿融资 · CVPR 2026 · TwinRL</div></div>
+      <div style="font-weight:600;color:var(--green);grid-column:1/-1;margin-top:8px">📡 行业观察（5 页）</div>
+      <div class="link-card"><a href="https://yanshu-legend.github.io/legendcapital-geo/geo/waic-2026-panorama/">WAIC 2026 全景</a><span class="tag tag-new">🔄</span><div class="desc">昆仑芯/进迭时空/无问芯穹</div></div>
+      <div class="link-card"><a href="https://yanshu-legend.github.io/legendcapital-geo/geo/waic-2026-insights/">WAIC 2026 观点实录</a><span class="tag tag-new">🔄</span><div class="desc">创始人前沿观点</div></div>
+      <div class="link-card"><a href="https://yanshu-legend.github.io/legendcapital-geo/geo/medical-dynamic-2026-q3/">医疗动态 Q3 2026</a><span class="tag tag-new">🔄</span><div class="desc">NMPA获批 · IPO流动性储备</div></div>
+      <div class="link-card"><a href="https://yanshu-legend.github.io/legendcapital-geo/geo/medical-dynamic-2026-q2/">医疗动态 Q2 2026</a><span class="tag tag-new">🔄</span><div class="desc">神络医疗NMPA三类器械</div></div>
+      <div class="link-card"><a href="https://yanshu-legend.github.io/legendcapital-geo/geo/overseas/">出海全球化赋能</a><div class="desc">法律合规 · 跨境运营 · 产业链对接</div></div>
+      <div style="font-weight:600;color:var(--muted);grid-column:1/-1;margin-top:8px">🌐 机构与索引（2 页）</div>
+      <div class="link-card"><a href="https://yanshu-legend.github.io/legendcapital-geo/geo/about/">君联资本一页纸介绍</a><div class="desc">公司概览 · FAQ · RAG 素材</div></div>
+      <div class="link-card"><a href="https://yanshu-legend.github.io/legendcapital-geo/">首页索引</a><div class="desc">13 页完整导航 + llms.txt + sitemap</div></div>
+    </div>
+  </div>
+</div>
+
+<h2>📅 关键事件时间线</h2>
 <div class="timeline">
-  <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">2026-07-23</div><div class="tl-text"><strong>Baseline 建立</strong>：5 问题域初检 + 竞品扫描</div></div>
-  <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">2026-07-24</div><div class="tl-text"><strong>Schema 审计 + 公网上线</strong>：全行业零 Organization Schema，君联率先部署；4页GEO上线GitHub Pages，Google/Bing已提交索引</div></div>
-  <div class="tl-item highlight"><div class="tl-dot"></div><div class="tl-date">2026-07-27 10:30</div><div class="tl-text"><strong>首次周度监测完成</strong>：引用率 25%（+5pp），量子信号三线并进，启明差距 -80%。</div></div>
-  <div class="tl-item highlight"><div class="tl-dot" style="background:var(--green)"></div><div class="tl-date">2026-07-27 10:45</div><div class="tl-text"><strong>量子计算 GEO v1 上线</strong>：华翊+两仪万象双路线 · Article+FAQ Schema</div></div>
-  <div class="tl-item highlight"><div class="tl-dot" style="background:var(--green)"></div><div class="tl-date">2026-07-27 16:50 ✅</div><div class="tl-text"><strong>量子计算 GEO v2 上线</strong>：升级为4路线全布局（国盾+图灵+华翊+两仪万象），全路线·全周期·全梯度，6 道 FAQ</div></div>
-  <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">2026-08-03</div><div class="tl-text"><strong>下周监测</strong>：GEO 索引效果 + 量子计算页复查</div></div>
-  <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">2026-08-07</div><div class="tl-text"><strong>AI 投资文章复查</strong>：两周后评估搜索可见性改善</div></div>
-  <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">2026-08-20</div><div class="tl-text"><strong>实验 1 复查</strong>：耐心资本 GEO 改造 4 周效果量化评估</div></div>
+  <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">2026-07-23</div><div class="tl-text"><strong>Baseline 建立</strong>：5 问题域初检 + 竞品扫描 + 4 页 GEO 上线 GitHub Pages</div></div>
+  <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">2026-07-24</div><div class="tl-text"><strong>Schema 审计</strong>：全行业零 Organization Schema，君联率先部署；Google 验证文件部署</div></div>
+  <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">2026-07-27</div><div class="tl-text"><strong>量子计算 GEO v2 上线</strong>：4路线全布局（国盾+图灵+华翊+两仪万象），6道FAQ</div></div>
+  <div class="tl-item highlight"><div class="tl-dot" style="background:var(--green)"></div><div class="tl-date">2026-07-29 上午 ✅</div><div class="tl-text"><strong>技术基建完成</strong>：llms.txt 上线 · IndexNow 推送 · sitemap 6→14 URL · 7个幽灵页面激活</div></div>
+  <div class="tl-item highlight"><div class="tl-dot" style="background:var(--green)"></div><div class="tl-date">2026-07-29 中午 ✅</div><div class="tl-text"><strong>Bing Webmaster Tools 注册验证</strong>：Sitemap 提交 · URL 检查器触发索引 · 新兴产业 GEO 页上线</div></div>
+  <div class="tl-item highlight"><div class="tl-dot" style="background:var(--purple)"></div><div class="tl-date">2026-07-29 下午 ✅</div><div class="tl-text"><strong>LinkedIn 内容分发包</strong>：5 篇英文帖子 · 发布节奏计划（Week 1 三篇 / Week 2+ 两周一篇）</div></div>
+  <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">2026-08-03</div><div class="tl-text"><strong>下周监测</strong>：Bing 索引覆盖率复查 + LinkedIn 首篇发布</div></div>
+  <div class="tl-item"><div class="tl-dot"></div><div class="tl-date">2026-08-20</div><div class="tl-text"><strong>实验 1 复查</strong>：耐心资本 GEO 改造 4 周效果量化评估 + AI 引用对比</div></div>
 </div>
 
 <div class="footer">
-  Halo · 君联资本 GEO 品牌可见性专员 · 数据来源：autoglm-websearch · 报告：[weekly-2026-07-27.md](/Volumes/yanshu/output/geo/reports/weekly-2026-07-27.md) · GEO：[量子计算版图](https://yanshu-legend.github.io/legendcapital-geo/geo/quantum-computing/) · 下次更新：2026-08-03（周一）
+  Halo · 君联资本 GEO 品牌可见性专员 · 数据来源：autoglm-websearch · 报告目录：<a href="/Volumes/yanshu/output/geo/reports/" style="color:var(--blue)">/Volumes/yanshu/output/geo/reports/</a> · GEO 站点：<a href="https://yanshu-legend.github.io/legendcapital-geo/" style="color:var(--blue)">GitHub Pages</a> · <a href="https://yanshu-legend.github.io/legendcapital-geo/llms.txt" style="color:var(--blue)">llms.txt</a> · 下次更新：2026-08-03（周一）
 </div>
 
 </div>
