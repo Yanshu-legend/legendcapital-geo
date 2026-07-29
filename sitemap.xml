@@ -1,28 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://yanshu-legend.github.io/legendcapital-geo/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://yanshu-legend.github.io/legendcapital-geo/geo/about/</loc>
-    <lastmod>2026-07-24</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://yanshu-legend.github.io/legendcapital-geo/geo/ai-investment/</loc>
-    <lastmod>2026-07-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
     <loc>https://yanshu-legend.github.io/legendcapital-geo/geo/</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://yanshu-legend.github.io/legendcapital-geo/geo/overseas/</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://yanshu-legend.github.io/legendcapital-geo/geo/ai-investment/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
   </url>
   <url>
     <loc>https://yanshu-legend.github.io/legendcapital-geo/geo/quantum-computing/</loc>
@@ -31,9 +37,45 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://yanshu-legend.github.io/legendcapital-geo/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <loc>https://yanshu-legend.github.io/legendcapital-geo/geo/gei-unicorn-2026/</loc>
+    <lastmod>2026-07-29</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://yanshu-legend.github.io/legendcapital-geo/geo/haizhi-tech-ipo/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://yanshu-legend.github.io/legendcapital-geo/geo/medical-dynamic-2026-q2/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://yanshu-legend.github.io/legendcapital-geo/geo/medical-dynamic-2026-q3/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://yanshu-legend.github.io/legendcapital-geo/geo/waic-2026-insights/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yanshu-legend.github.io/legendcapital-geo/geo/waic-2026-panorama/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yanshu-legend.github.io/legendcapital-geo/geo/zhijian-dongli-2026/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 </urlset>
