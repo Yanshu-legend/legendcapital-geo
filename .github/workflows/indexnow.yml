@@ -1,0 +1,54 @@
+name: IndexNow Submit
+
+# 当 main 分支有 push 时自动提交 IndexNow
+on:
+  push:
+    branches:
+      - main
+  # 也支持手动触发
+  workflow_dispatch:
+
+jobs:
+  submit-indexnow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Extract sitemap URLs
+        id: extract
+        run: |
+          # 从 sitemap.xml 提取所有 URL
+          URLS=$(grep -oP '(?<=<loc>)[^<]+' sitemap.xml | jq -R -s -c 'split("\n") | map(select(length > 0))')
+          echo "url_list=$URLS" >> $GITHUB_OUTPUT
+          echo "Found $(echo $URLS | jq length) URLs"
+
+      - name: Submit to IndexNow (bulk)
+        run: |
+          # IndexNow 批量提交
+          URLS='${{ steps.extract.outputs.url_list }}'
+          LENGTH=$(echo "$URLS" | jq length)
+
+          # Split into batches of 100 if needed (IndexNow limit)
+          BATCH_SIZE=100
+          for ((i=0; i<LENGTH; i+=BATCH_SIZE)); do
+            BATCH=$(echo "$URLS" | jq -c ".[$i:$((i+BATCH_SIZE))]")
+            PAYLOAD=$(jq -n \
+              --arg host "yanshu-legend.github.io" \
+              --arg key "39b2f4e5c9d847d6a0138e2f5c0d1b7a" \
+              --argjson urls "$BATCH" \
+              '{host: $host, key: $key, urlList: $urls}')
+
+            echo "Submitting batch $((i/BATCH_SIZE + 1))..."
+            RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
+              "https://api.indexnow.org/indexnow" \
+              -H "Content-Type: application/json; charset=utf-8" \
+              -d "$PAYLOAD")
+
+            HTTP_CODE=$(echo "$RESPONSE" | tail -1)
+            echo "Response: HTTP $HTTP_CODE"
+          done
+
+      - name: Notify completion
+        run: |
+          echo "::notice::IndexNow submission completed for ${{ steps.extract.outputs.url_count }} URLs"
