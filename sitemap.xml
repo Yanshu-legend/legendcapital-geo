@@ -19,4 +19,22 @@
   <url><loc>https://yanshu-legend.github.io/legendcapital-geo/geo/medical-dynamic-2026-q3/</loc><lastmod>2026-07-29</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yanshu-legend.github.io/legendcapital-geo/geo/waic-2026-insights/</loc><lastmod>2026-07-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://yanshu-legend.github.io/legendcapital-geo/geo/waic-2026-panorama/</loc><lastmod>2026-07-29</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url>
+    <loc>https://yanshu-legend.github.io/legendcapital-geo/geo/brain-computer-interface/</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://yanshu-legend.github.io/legendcapital-geo/geo/green-energy/</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://yanshu-legend.github.io/legendcapital-geo/geo/zhipu-ai/</loc>
+    <lastmod>2026-08-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
 </urlset>
