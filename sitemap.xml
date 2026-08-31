@@ -34,4 +34,10 @@
   <url><loc>https://yanshu-legend.github.io/legendcapital-geo/geo/medical-dynamic-2026-q2/</loc><lastmod>2026-07-29</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://yanshu-legend.github.io/legendcapital-geo/geo/overseas/</loc><lastmod>2026-07-29</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://yanshu-legend.github.io/legendcapital-geo/geo/about/</loc><lastmod>2026-07-29</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url>
+    <loc>https://yanshu-legend.github.io/legendcapital-geo/geo/touzhong-2025-top3/</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
 </urlset>
