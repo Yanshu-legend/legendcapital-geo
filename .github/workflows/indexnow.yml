@@ -36,8 +36,9 @@ jobs:
             PAYLOAD=$(jq -n \
               --arg host "yanshu-legend.github.io" \
               --arg key "39b2f4e5c9d847d6a0138e2f5c0d1b7a" \
+              --arg keylocation "https://yanshu-legend.github.io/legendcapital-geo/39b2f4e5c9d847d6a0138e2f5c0d1b7a.txt" \
               --argjson urls "$BATCH" \
-              '{host: $host, key: $key, urlList: $urls}')
+              '{host: $host, key: $key, keyLocation: $keylocation, urlList: $urls}')
 
             echo "Submitting batch $((i/BATCH_SIZE + 1))..."
             RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
@@ -47,6 +48,16 @@ jobs:
 
             HTTP_CODE=$(echo "$RESPONSE" | tail -1)
             echo "Response: HTTP $HTTP_CODE"
+
+            # 403 = 密钥验证失败（GitHub Pages 项目站必须显式指定 keyLocation，否则静默失败）
+            if [ "$HTTP_CODE" = "403" ]; then
+              echo "::error::IndexNow 403: key verification failed. keyLocation is required for GitHub Pages project sites."
+              exit 1
+            fi
+            if [ "$HTTP_CODE" != "200" ] && [ "$HTTP_CODE" != "202" ]; then
+              echo "::error::IndexNow unexpected HTTP $HTTP_CODE"
+              exit 1
+            fi
           done
 
       - name: Notify completion
