@@ -55,6 +55,33 @@ tr:last-child td{border-bottom:none}
 .link-card a{color:var(--blue);text-decoration:none;font-weight:600}
 .link-card a:hover{text-decoration:underline}
 .link-card .desc{color:var(--muted);font-size:11px;margin-top:4px}
+
+/* ===== 总 Performance 可视化（2026-10-13 改版新增） ===== */
+.perf-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin:18px 0}
+.perf-cell{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px 16px;text-align:center}
+.perf-cell .pv{font-size:1.9em;font-weight:800;line-height:1.15}
+.perf-cell .pl{font-size:11px;color:var(--muted);margin-top:2px}
+.perf-cell .pt{font-size:11px;font-weight:700;margin-top:6px}
+.heat{width:100%;border-collapse:separate;border-spacing:3px;font-size:12.5px}
+.heat th{font-size:10.5px;padding:6px 4px;text-align:center;color:var(--muted);font-weight:600;text-transform:none;letter-spacing:0}
+.heat th:first-child{text-align:left;padding-left:8px}
+.heat td{padding:7px 4px;text-align:center;border-radius:6px;font-weight:700;font-size:12px;min-width:52px}
+.heat td:first-child{text-align:left;padding-left:8px;font-weight:600;background:transparent !important;border-bottom:1px solid var(--border);border-radius:0}
+.h-strong{background:rgba(34,197,94,.22);color:#15803d}
+.h-deep{background:rgba(34,197,94,.42);color:#14532d}
+.h-mid{background:rgba(234,179,8,.2);color:#a16207}
+.h-partial{background:rgba(59,130,246,.15);color:#1d4ed8}
+.h-weak{background:rgba(239,68,68,.13);color:#b91c1c}
+.h-none{background:rgba(148,163,184,.08);color:#94a3b8}
+.heat-legend{display:flex;gap:14px;flex-wrap:wrap;font-size:11px;color:var(--muted);margin-top:10px;align-items:center}
+.hl{display:inline-flex;align-items:center;gap:4px}
+.hl i{width:12px;height:12px;border-radius:3px;display:inline-block}
+.sigbar{display:flex;align-items:center;gap:10px;margin:8px 0}
+.sigbar .sb-label{width:120px;font-size:12.5px;font-weight:600;flex-shrink:0}
+.sigbar .sb-track{flex:1;height:14px;border-radius:7px;background:var(--border);overflow:hidden;position:relative}
+.sigbar .sb-fill{height:100%;border-radius:7px;display:flex;align-items:center;padding-left:8px;color:#fff;font-size:10px;font-weight:700;min-width:30px;transition:width .6s ease}
+.sigbar .sb-note{width:190px;font-size:11px;color:var(--muted);flex-shrink:0}
+@media(max-width:820px){.sigbar .sb-note{display:none}.sigbar .sb-label{width:95px;font-size:11.5px}}
 </style>
 </head>
 <body>
@@ -62,9 +89,9 @@ tr:last-child td{border-bottom:none}
 
 <h1>🧭 君联资本 <span>GEO</span> 品牌可见性看板</h1>
 <div class="sub">
-  <span>最后更新：2026-10-08 10:15 GMT+8</span>
+  <span>最后更新：2026-10-13 17:30 GMT+8</span>
   <span class="live">监测运行中</span>
-  <span>34 页 · 李家庆观点页上线(10-13) · 周报补测三周窗口 · 节后管线巡检全绿</span>
+  <span>34 页 · 双页改版上线(10-13) · 李家庆观点页 Big IF 修正 · 周报质量复盘完成</span>
 </div>
 
 <div class="metrics">
@@ -95,6 +122,50 @@ tr:last-child td{border-bottom:none}
     <div class="metric-sub">LinkedIn 英文帖子已备稿</div>
     <div class="bar-wrap"><div class="bar-fill bar-purple" style="width:70%"></div></div>
     <div class="metric-trend trend-flat">⏳ 待发布 · Sona 数据卡片图待生成</div>
+  </div>
+</div>
+
+<div class="panel" style="margin-top:20px">
+  <div class="panel-title">🎯 总 Performance：AI 主流模型对君联资本的信号强度（2026-10-01 六平台月测 × 09-15 八平台梯度复测）</div>
+
+  <div class="perf-summary">
+    <div class="perf-cell"><div class="pv color-green">6/8</div><div class="pl">10强心智（梯度复测）</div><div class="pt trend-up">↑ 通义/DeepSeek 破零</div></div>
+    <div class="perf-cell"><div class="pv color-green">75%</div><div class="pl">5强心智（+25pp）</div><div class="pt trend-up">↑ 反超启明</div></div>
+    <div class="perf-cell"><div class="pv color-green">4/6</div><div class="pl">智谱AI 标签</div><div class="pt trend-flat">→ 高位持平</div></div>
+    <div class="perf-cell"><div class="pv color-green">3/6</div><div class="pl">社保基金标签</div><div class="pt trend-flat">→ 数字块整引</div></div>
+    <div class="perf-cell"><div class="pv color-yellow">2/6</div><div class="pl">耐心资本标签</div><div class="pt trend-down">↓ 广度换深度</div></div>
+    <div class="perf-cell"><div class="pv color-yellow">2/6</div><div class="pl">量子计算标签</div><div class="pt trend-up">↑ 质量历史最佳</div></div>
+    <div class="perf-cell"><div class="pv color-red">0/6</div><div class="pl">IPO 清科口径</div><div class="pt trend-down">↓ 口径修复中</div></div>
+    <div class="perf-cell"><div class="pv color-red">0/10</div><div class="pl">具身智能标签</div><div class="pt trend-flat">→ v2.1 卡位中</div></div>
+  </div>
+
+  <table class="heat">
+    <tr><th>标签 \ 平台</th><th>文心一言</th><th>DeepSeek</th><th>通义千问</th><th>智谱清言</th><th>豆包</th><th>Kimi</th></tr>
+    <tr><td><b>耐心资本</b></td><td class="h-deep">✅✅ 定位</td><td class="h-deep">✅✅ 定位</td><td class="h-none">❌</td><td class="h-none">❌</td><td class="h-none">❌</td><td class="h-none">❌</td></tr>
+    <tr><td><b>智谱AI 关系</b></td><td class="h-strong">✅</td><td class="h-strong">✅ 浮盈</td><td class="h-strong">✅</td><td class="h-strong">✅ 新入</td><td class="h-none">❌</td><td class="h-none">❌</td></tr>
+    <tr><td><b>社保基金</b></td><td class="h-strong">✅</td><td class="h-strong">✅</td><td class="h-strong">✅</td><td class="h-partial">◐</td><td class="h-partial">◐</td><td class="h-none">❌</td></tr>
+    <tr><td><b>量子计算</b></td><td class="h-deep">✅✅ 整句</td><td class="h-deep">✅✅ 整句</td><td class="h-partial">◐ 罗列</td><td class="h-none">❌</td><td class="h-none">❌</td><td class="h-none">❌</td></tr>
+    <tr><td><b>IPO 战绩</b></td><td class="h-partial">◐ 媒体口径</td><td class="h-partial">◐ 媒体口径</td><td class="h-partial">◐ 定性</td><td class="h-none">❌</td><td class="h-none">❌</td><td class="h-none">❌</td></tr>
+    <tr><td><b>机构画像</b></td><td class="h-strong">头部</td><td class="h-strong">头部</td><td class="h-strong">第一梯队</td><td class="h-strong">头部</td><td class="h-mid">一线</td><td class="h-mid">A档</td></tr>
+  </table>
+  <div class="heat-legend">
+    <span class="hl"><i style="width:12px;height:12px;border-radius:3px;background:rgba(34,197,94,.42);display:inline-block"></i>深度引用（整句/开篇定位）</span>
+    <span class="hl"><i style="width:12px;height:12px;border-radius:3px;background:rgba(34,197,94,.22);display:inline-block"></i>明确引用</span>
+    <span class="hl"><i style="width:12px;height:12px;border-radius:3px;background:rgba(59,130,246,.15);display:inline-block"></i>部分引用/口径偏差</span>
+    <span class="hl"><i style="width:12px;height:12px;border-radius:3px;background:rgba(234,179,8,.2);display:inline-block"></i>提及但无标签</span>
+    <span class="hl"><i style="width:12px;height:12px;border-radius:3px;background:rgba(148,163,184,.08);display:inline-block"></i>未引用</span>
+    <span style="margin-left:auto">数据：2026-10-01 月测 + 09-15 梯度复测</span>
+  </div>
+
+  <div style="margin-top:18px">
+    <div style="font-size:13px;font-weight:600;margin-bottom:4px">📈 信号增强/减弱排行（vs baseline 08-18）</div>
+    <div class="sigbar"><div class="sb-label">智谱AI 关系</div><div class="sb-track"><div class="sb-fill" style="width:67%;background:linear-gradient(90deg,#16a34a,#22c55e)">4/6</div></div><div class="sb-note">🚀 +3 平台 · 高位持平两轮</div></div>
+    <div class="sigbar"><div class="sb-label">社保基金</div><div class="sb-track"><div class="sb-fill" style="width:50%;background:linear-gradient(90deg,#16a34a,#22c55e)">3/6</div></div><div class="sb-note">🚀 +2 · 9月高点4/6小幅回落</div></div>
+    <div class="sigbar"><div class="sb-label">耐心资本</div><div class="sb-track"><div class="sb-fill" style="width:33%;background:linear-gradient(90deg,#ca8a04,#eab308)">2/6</div></div><div class="sb-note">📉 广度回落 · 深度跃升（开篇定位×2）</div></div>
+    <div class="sigbar"><div class="sb-label">量子计算</div><div class="sb-track"><div class="sb-fill" style="width:33%;background:linear-gradient(90deg,#ca8a04,#eab308)">2/6</div></div><div class="sb-note">📈 质量历史最佳（整句引用×2）</div></div>
+    <div class="sigbar"><div class="sb-label">IPO 清科口径</div><div class="sb-track"><div class="sb-fill" style="width:8%;background:linear-gradient(90deg,#b91c1c,#ef4444)">0/6</div></div><div class="sb-note">🔴 连续衰减 2→1→0 · 口径被媒体版占领</div></div>
+    <div class="sigbar"><div class="sb-label">具身智能</div><div class="sb-track"><div class="sb-fill" style="width:8%;background:linear-gradient(90deg,#b91c1c,#ef4444)">0/10</div></div><div class="sb-note">⚔️ 新基线 · v2.1 卡位 + 《讲真》待破局</div></div>
+    <div class="sigbar"><div class="sb-label">Kimi 全标签</div><div class="sb-track"><div class="sb-fill" style="width:8%;background:linear-gradient(90deg,#b91c1c,#ef4444)">0</div></div><div class="sb-note">🔴 连续三月零 · 检索源缺位（知乎+百科行动项）</div></div>
   </div>
 </div>
 
