@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
-Sitemap: https://yanshu-legend.github.io/legendcapital-geo/sitemap.xml
+Sitemap: https://geo.legendcapital.com.cn/sitemap.xml
 
 # AI Agent discovery
 # llms.txt provides structured content index for LLM crawlers
-# See: https://yanshu-legend.github.io/legendcapital-geo/llms.txt
+# See: https://geo.legendcapital.com.cn/llms.txt
